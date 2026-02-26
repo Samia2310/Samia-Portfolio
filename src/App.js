@@ -28,6 +28,14 @@ function App() {
         <h1 style={{ color: "var(--text-primary)", fontSize: "3rem" }}>Projects Section</h1>
       </section>
 
+      <section id="certification" style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <h1 style={{ color: "var(--text-primary)", fontSize: "3rem" }}>Certification Section</h1>
+      </section>
+
+      <section id="experience" style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <h1 style={{ color: "var(--text-primary)", fontSize: "3rem" }}>Experience Section</h1>
+      </section>
+
       <section id="contact" style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
         <h1 style={{ color: "var(--text-primary)", fontSize: "3rem" }}>Contact Section</h1>
       </section>

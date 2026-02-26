@@ -34,7 +34,7 @@ export default function About() {
 
           <p>
             From academic research to personal builds, I enjoy solving real-world
-            problems through code — and I'm always learning something new along the way.
+            problems through code and I'm always learning something new along the way.
           </p>
 
           <div className="about-info">

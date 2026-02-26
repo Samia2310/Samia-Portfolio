@@ -7,7 +7,7 @@ export default function Navbar({ dark, toggleTheme }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
-  const navLinks = ["About", "Skills", "Projects", "Contact"];
+  const navLinks = ["About", "Skills", "Projects", "Certification", "Experience", "Contact"];
   const themeClass = dark ? "dark" : "light";
 
   /* Scroll detection */

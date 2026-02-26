@@ -32,16 +32,21 @@
   position: relative;
   width: 380px;
   height: 420px;
+  padding: 3px;
+  background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+  border-radius: 22px;
 }
 
 .image-wrapper img {
-  width: 380px;
-  height: 420px;
+  width: 100%;
+  height: 100%;
   border-radius: 20px;
   object-fit: cover;
   position: relative;
   z-index: 2;
-  border: 2px solid var(--border);
+  border: none;
+  display: block;
+  
 }
 
 .about-content {
@@ -163,10 +168,14 @@
     gap: 3rem;
   }
 
-  .image-wrapper,
-  .image-wrapper img {
+  .image-wrapper {
     width: 320px;
     height: 360px;
+  }
+
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -176,10 +185,14 @@
     gap: 2.5rem;
   }
 
-  .image-wrapper,
-  .image-wrapper img {
+  .image-wrapper {
     width: 280px;
     height: 320px;
+  }
+
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
   }
 
   .about-content h2 {
@@ -255,14 +268,14 @@
   .image-wrapper {
     width: 200px;
     height: 230px;
-    filter: drop-shadow(0 16px 32px rgba(59, 130, 246, 0.15));
+    border-radius: 26px;
+    filter: drop-shadow(0 16px 32px rgba(59, 130, 246, 0.2));
   }
 
   .image-wrapper img {
-    width: 200px;
-    height: 230px;
+    width: 100%;
+    height: 100%;
     border-radius: 24px;
-    border: 2px solid rgba(59, 130, 246, 0.2);
   }
 
   .about-content h2 {
@@ -343,10 +356,14 @@
     padding: 0 1.4rem;
   }
 
-  .image-wrapper,
-  .image-wrapper img {
+  .image-wrapper {
     width: 175px;
     height: 205px;
+  }
+
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
   }
 
   .about-content h2 {
@@ -385,10 +402,15 @@
     padding: 0 1.1rem;
   }
 
-  .image-wrapper,
-  .image-wrapper img {
+  .image-wrapper {
     width: 155px;
     height: 185px;
+    border-radius: 20px;
+  }
+
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
     border-radius: 18px;
   }
 
@@ -443,10 +465,15 @@
   .about-image                    { order: unset; }
   .about-content                  { order: unset; align-items: flex-start; }
 
-  .image-wrapper,
-  .image-wrapper img {
+  .image-wrapper {
     width: 150px;
     height: 175px;
+    border-radius: 18px;
+  }
+
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
     border-radius: 16px;
   }
 

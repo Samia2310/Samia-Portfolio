@@ -127,22 +127,13 @@
   color: #3B82F6;
 }
 
-/* ═══════════════════════════════════════
-   MOBILE ≤ 768px ONLY
-   ═══════════════════════════════════════ */
 @media (max-width: 768px) {
-
-  /* Hide desktop elements */
   .logo      { display: none; }
   .nav-links { display: none; }
-
-  /* Show hamburger on left */
   .hamburger { display: flex; }
-
-  /* Name on right via pseudo-element */
   .navbar::after {
     content: "Samia Tabassum Chowdhury";
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     font-weight: 700;
     background: linear-gradient(135deg, #3B82F6, #8B5CF6);
     -webkit-background-clip: text;
@@ -155,17 +146,13 @@
 
 @media (max-width: 480px) {
   .navbar { padding: 0.8rem 1.25rem; }
-  .navbar::after { font-size: 0.78rem; }
+  .navbar::after { font-size: 0.99rem; }
 }
 
 @media (max-width: 360px) {
   .navbar { padding: 0.8rem 1rem; }
-  .navbar::after { font-size: 0.7rem; }
+  .navbar::after { font-size: 0.95rem; }
 }
-
-/* ═══════════════════════════════════════
-   OVERLAY
-   ═══════════════════════════════════════ */
 
 .drawer-overlay {
   position: fixed;
@@ -180,10 +167,6 @@
   from { opacity: 0; }
   to   { opacity: 1; }
 }
-
-/* ═══════════════════════════════════════
-   DRAWER
-   ═══════════════════════════════════════ */
 
 .navbar-drawer {
   position: fixed;
