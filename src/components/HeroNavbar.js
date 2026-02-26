@@ -6,21 +6,37 @@ export default function HeroNavbar({ dark, toggleTheme }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [visible, setVisible] = useState(true);
 
+  // Hide navbar after scrolling past hero section
   useEffect(() => {
     const handleScroll = () => {
-      const heroHeight = document.getElementById("hero")?.offsetHeight || window.innerHeight;
+      const heroHeight =
+        document.getElementById("hero")?.offsetHeight || window.innerHeight;
+
       setVisible(window.scrollY < heroHeight - 80);
     };
+
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close menu on resize (e.g. rotating device)
+  // Close menu on resize
   useEffect(() => {
     const handleResize = () => setMenuOpen(false);
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  // Lock body scroll when drawer is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
 
   const navLinks = ["About", "Skills", "Projects", "Contact"];
 
@@ -28,14 +44,15 @@ export default function HeroNavbar({ dark, toggleTheme }) {
 
   return (
     <>
+      {/* Navbar Header */}
       <header className={"hero-navbar " + (dark ? "dark" : "light")}>
 
         <button
           className="hero-hamburger"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
+          onClick={() => setMenuOpen(true)}
+          aria-label="Open menu"
         >
-          {menuOpen ? "✕" : "☰"}
+          ☰
         </button>
 
         <button
@@ -48,22 +65,66 @@ export default function HeroNavbar({ dark, toggleTheme }) {
 
       </header>
 
-      {/* Portal renders the dropdown directly into <body>
-          so it's never trapped inside a flex or positioned container */}
-      {menuOpen && createPortal(
-        <div className={"hero-mobile-menu " + (dark ? "dark" : "light")}>
-          {navLinks.map((link) => (
-            <a
-              key={link}
-              href={"#" + link.toLowerCase()}
+      {/* Drawer Portal */}
+      {menuOpen &&
+        createPortal(
+          <>
+            {/* Overlay */}
+            <div
+              className="drawer-overlay"
               onClick={() => setMenuOpen(false)}
-            >
-              {link}
-            </a>
-          ))}
-        </div>,
-        document.body
-      )}
+            />
+
+            {/* Drawer Panel */}
+            <div className={"hero-mobile-menu " + (dark ? "dark" : "light")}>
+
+              {/* Drawer Header */}
+              <div className="drawer-header">
+                <button
+                  className="drawer-close"
+                  onClick={() => setMenuOpen(false)}
+                  aria-label="Close menu"
+                >
+                  ✕
+                </button>
+              </div>
+
+              {/* Navigation Links */}
+              <nav className="drawer-links">
+                {navLinks.map((link, i) => (
+                  <a
+                    key={link}
+                    href={"#" + link.toLowerCase()}
+                    onClick={() => setMenuOpen(false)}
+                    className="drawer-link"
+                  >
+                    <span className="drawer-link-number">
+                      0{i + 1}
+                    </span>
+                    {link}
+                  </a>
+                ))}
+              </nav>
+
+              {/* Footer */}
+              <div className="drawer-footer">
+                <span className="drawer-footer-label">
+                  {dark ? "Dark mode" : "Light mode"}
+                </span>
+
+                <button
+                  className="drawer-theme-btn"
+                  onClick={toggleTheme}
+                  aria-label="Toggle theme"
+                >
+                  {dark ? "☀️" : "🌙"}
+                </button>
+              </div>
+
+            </div>
+          </>,
+          document.body
+        )}
     </>
   );
 }

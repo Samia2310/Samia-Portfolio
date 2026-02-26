@@ -5,6 +5,8 @@ export default function About() {
     <section className="about" id="about">
       <div className="about-container">
 
+        <span className="section-tag">About Me</span>
+
         <div className="about-image">
           <div className="image-wrapper">
             <img src="/photo.jpg" alt="Samia" />
@@ -12,7 +14,6 @@ export default function About() {
         </div>
 
         <div className="about-content">
-          <span className="section-tag">About Me</span>
 
           <h2>
             CSE Student &

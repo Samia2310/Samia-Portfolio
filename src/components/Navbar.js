@@ -6,16 +6,23 @@ export default function Navbar({ dark, toggleTheme }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const heroHeight =
-        document.getElementById("hero")?.offsetHeight ||
-        window.innerHeight;
+    // Delay so hero section is painted and offsetHeight is reliable
+    const timer = setTimeout(() => {
+      const handleScroll = () => {
+        const heroHeight =
+          document.getElementById("hero")?.offsetHeight || window.innerHeight;
+        setScrolled(window.scrollY > heroHeight - 80);
+      };
 
-      setScrolled(window.scrollY > heroHeight - 80);
-    };
+      window.addEventListener("scroll", handleScroll);
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+      // Set correct initial state immediately after attaching
+      handleScroll();
+
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const navLinks = ["About", "Skills", "Projects", "Contact"];
@@ -37,7 +44,6 @@ export default function Navbar({ dark, toggleTheme }) {
             <a href={"#" + link.toLowerCase()}>{link}</a>
           </li>
         ))}
-
         <li>
           <button
             className={"theme-icon-btn " + themeClass}
@@ -68,7 +74,6 @@ export default function Navbar({ dark, toggleTheme }) {
               {link}
             </a>
           ))}
-
           <button
             className={"theme-icon-btn " + themeClass}
             onClick={() => {

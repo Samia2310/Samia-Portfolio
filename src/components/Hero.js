@@ -4,8 +4,6 @@ import HeroNavbar from "./HeroNavbar";
 export default function Hero({ dark, toggleTheme }) {
   return (
     <>
-      {/* Navbar is OUTSIDE <section> so it doesn't join the
-          flex column and push all content down the screen */}
       <HeroNavbar dark={dark} toggleTheme={toggleTheme} />
 
       <section className="hero" id="hero">
@@ -45,15 +43,15 @@ export default function Hero({ dark, toggleTheme }) {
           </div>
 
           <div className="hero-social">
-            <a href="https://github.com/" target="_blank" rel="noreferrer" className="social-link">
+            <a href="https://github.com/Samia2310" target="_blank" rel="noreferrer" className="social-link">
               GitHub
             </a>
             <span className="social-divider">|</span>
-            <a href="https://linkedin.com/" target="_blank" rel="noreferrer" className="social-link">
+            <a href="https://www.linkedin.com/in/samia-tabassum-chowdhury-191229348 " target="_blank" rel="noreferrer" className="social-link">
               LinkedIn
             </a>
             <span className="social-divider">|</span>
-            <a href="mailto:samia@email.com" className="social-link">
+            <a href="samiatchowdhury2310@gmail.com" className="social-link">
               Email
             </a>
           </div>
