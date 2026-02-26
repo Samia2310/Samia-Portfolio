@@ -1,18 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./HeroNavbar.css";
 
 export default function HeroNavbar({ dark, toggleTheme }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroHeight = document.getElementById("hero")?.offsetHeight || window.innerHeight;
+      setVisible(window.scrollY < heroHeight - 80);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = ["About", "Skills", "Projects", "Contact"];
 
-  return (
-    <header className="hero-navbar">
+  if (!visible) return null;
 
-      <button
-        className="hero-hamburger"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
+  return (
+    <header className={"hero-navbar " + (dark ? "dark" : "light")}>
+
+      <button className="hero-hamburger" onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? "✕" : "☰"}
       </button>
 

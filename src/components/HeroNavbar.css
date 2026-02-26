@@ -1,15 +1,23 @@
 .hero-navbar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 999;
   padding: 1.5rem 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: transparent;
   flex-wrap: wrap;
+}
+
+.hero-navbar.dark {
+  background: transparent;
+}
+
+.hero-navbar.light {
+  background: transparent;
 }
 
 .hero-hamburger {
@@ -53,6 +61,16 @@
   margin-top: 0.5rem;
 }
 
+.hero-mobile-menu.dark {
+  background: rgba(11, 15, 26, 0.95);
+  padding: 1.2rem 2.5rem;
+}
+
+.hero-mobile-menu.light {
+  background: rgba(240, 246, 255, 0.95);
+  padding: 1.2rem 2.5rem;
+}
+
 .hero-mobile-menu a {
   color: var(--text-secondary);
   font-size: 1rem;
@@ -84,5 +102,12 @@
 @media (max-width: 360px) {
   .hero-navbar {
     padding: 1rem 1.2rem;
+  }
+}
+
+/* ── Landscape phones ── */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-navbar {
+    padding: 0.8rem 2rem;
   }
 }
