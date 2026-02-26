@@ -6,7 +6,6 @@ export default function HeroNavbar({ dark, toggleTheme }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [visible, setVisible] = useState(true);
 
-  // Hide navbar after scrolling past hero section
   useEffect(() => {
     const handleScroll = () => {
       const heroHeight =
@@ -21,7 +20,6 @@ export default function HeroNavbar({ dark, toggleTheme }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close menu on resize
   useEffect(() => {
     const handleResize = () => setMenuOpen(false);
 
@@ -29,7 +27,6 @@ export default function HeroNavbar({ dark, toggleTheme }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Lock body scroll when drawer is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
 
@@ -44,15 +41,14 @@ export default function HeroNavbar({ dark, toggleTheme }) {
 
   return (
     <>
-      {/* Navbar Header */}
       <header className={"hero-navbar " + (dark ? "dark" : "light")}>
 
         <button
           className="hero-hamburger"
-          onClick={() => setMenuOpen(true)}
-          aria-label="Open menu"
+          onClick={() => setMenuOpen(prev => !prev)}
+          aria-label="Toggle menu"
         >
-          ☰
+          {menuOpen ? "✕" : "☰"}
         </button>
 
         <button
@@ -65,66 +61,32 @@ export default function HeroNavbar({ dark, toggleTheme }) {
 
       </header>
 
-      {/* Drawer Portal */}
-      {menuOpen &&
-        createPortal(
-          <>
-            {/* Overlay */}
-            <div
-              className="drawer-overlay"
-              onClick={() => setMenuOpen(false)}
-            />
+      {menuOpen && createPortal(
+        <>
+          <div
+            className="drawer-overlay"
+            onClick={() => setMenuOpen(false)}
+          />
 
-            {/* Drawer Panel */}
-            <div className={"hero-mobile-menu " + (dark ? "dark" : "light")}>
+          <div className={"hero-mobile-menu " + (dark ? "dark" : "light")}>
 
-              {/* Drawer Header */}
-              <div className="drawer-header">
-                <button
-                  className="drawer-close"
+            <nav className="drawer-links">
+              {navLinks.map((link) => (
+                <a
+                  key={link}
+                  href={"#" + link.toLowerCase()}
                   onClick={() => setMenuOpen(false)}
-                  aria-label="Close menu"
+                  className="drawer-link"
                 >
-                  ✕
-                </button>
-              </div>
+                  {link}
+                </a>
+              ))}
+            </nav>
 
-              {/* Navigation Links */}
-              <nav className="drawer-links">
-                {navLinks.map((link, i) => (
-                  <a
-                    key={link}
-                    href={"#" + link.toLowerCase()}
-                    onClick={() => setMenuOpen(false)}
-                    className="drawer-link"
-                  >
-                    <span className="drawer-link-number">
-                      0{i + 1}
-                    </span>
-                    {link}
-                  </a>
-                ))}
-              </nav>
-
-              {/* Footer */}
-              <div className="drawer-footer">
-                <span className="drawer-footer-label">
-                  {dark ? "Dark mode" : "Light mode"}
-                </span>
-
-                <button
-                  className="drawer-theme-btn"
-                  onClick={toggleTheme}
-                  aria-label="Toggle theme"
-                >
-                  {dark ? "☀️" : "🌙"}
-                </button>
-              </div>
-
-            </div>
-          </>,
-          document.body
-        )}
+          </div>
+        </>,
+        document.body
+      )}
     </>
   );
 }

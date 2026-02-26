@@ -1,91 +1,140 @@
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import "./Navbar.css";
 
 export default function Navbar({ dark, toggleTheme }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    // Delay so hero section is painted and offsetHeight is reliable
-    const timer = setTimeout(() => {
-      const handleScroll = () => {
-        const heroHeight =
-          document.getElementById("hero")?.offsetHeight || window.innerHeight;
-        setScrolled(window.scrollY > heroHeight - 80);
-      };
-
-      window.addEventListener("scroll", handleScroll);
-
-      // Set correct initial state immediately after attaching
-      handleScroll();
-
-      return () => window.removeEventListener("scroll", handleScroll);
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, []);
+  const [activeSection, setActiveSection] = useState("");
 
   const navLinks = ["About", "Skills", "Projects", "Contact"];
   const themeClass = dark ? "dark" : "light";
 
+  /* Scroll detection */
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroHeight =
+        document.getElementById("hero")?.offsetHeight || window.innerHeight;
+
+      setScrolled(window.scrollY > heroHeight - 80);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  /* Scroll spy observer */
+  useEffect(() => {
+    const sections = ["about", "skills", "projects", "contact"];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  /* Close menu on resize */
+  useEffect(() => {
+    const handleResize = () => setMenuOpen(false);
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  /* Lock body scroll */
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   if (!scrolled) return null;
 
   return (
-    <nav className={"navbar scrolled " + themeClass}>
+    <>
+      <nav className={"navbar scrolled " + themeClass}>
 
-      <a href="#hero" className="logo">
-        Samia Tabassum Chowdhury
-      </a>
+        <a href="#hero" className="logo">
+          Samia Tabassum Chowdhury
+        </a>
 
-      {/* Desktop Menu */}
-      <ul className="nav-links">
-        {navLinks.map((link) => (
-          <li key={link}>
-            <a href={"#" + link.toLowerCase()}>{link}</a>
-          </li>
-        ))}
-        <li>
-          <button
-            className={"theme-icon-btn " + themeClass}
-            onClick={toggleTheme}
-          >
-            {dark ? "☀️" : "🌙"}
-          </button>
-        </li>
-      </ul>
+        <button
+          className="hamburger"
+          onClick={() => setMenuOpen(prev => !prev)}
+        >
+          {menuOpen ? "✕" : "☰"}
+        </button>
 
-      {/* Hamburger */}
-      <button
-        className="hamburger"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        {menuOpen ? "✕" : "☰"}
-      </button>
-
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <div className={"mobile-menu " + themeClass}>
+        <ul className="nav-links">
           {navLinks.map((link) => (
-            <a
-              key={link}
-              href={"#" + link.toLowerCase()}
-              onClick={() => setMenuOpen(false)}
-            >
-              {link}
-            </a>
+            <li key={link}>
+              <a
+                href={"#" + link.toLowerCase()}
+                className={activeSection === link.toLowerCase() ? "active" : ""}
+              >
+                {link}
+              </a>
+            </li>
           ))}
-          <button
-            className={"theme-icon-btn " + themeClass}
-            onClick={() => {
-              toggleTheme();
-              setMenuOpen(false);
-            }}
-          >
-            {dark ? "☀️" : "🌙"}
-          </button>
-        </div>
-      )}
 
-    </nav>
+          <li>
+            <button
+              className={"theme-icon-btn " + themeClass}
+              onClick={toggleTheme}
+            >
+              {dark ? "☀️" : "🌙"}
+            </button>
+          </li>
+        </ul>
+
+      </nav>
+
+      {/* Drawer */}
+      {menuOpen &&
+        createPortal(
+          <>
+            <div
+              className="drawer-overlay"
+              onClick={() => setMenuOpen(false)}
+            />
+
+            <div className={"navbar-drawer " + themeClass}>
+              <nav className="drawer-links">
+                {navLinks.map((link) => (
+                  <a
+                    key={link}
+                    href={"#" + link.toLowerCase()}
+                    onClick={() => setMenuOpen(false)}
+                    className={
+                      "drawer-link " +
+                      (activeSection === link.toLowerCase() ? "active" : "")
+                    }
+                  >
+                    {link}
+                  </a>
+                ))}
+              </nav>
+            </div>
+          </>,
+          document.body
+        )}
+    </>
   );
 }
