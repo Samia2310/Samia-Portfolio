@@ -4,19 +4,11 @@
   left: 0;
   right: 0;
   z-index: 999;
-  padding: 1.5rem 2.5rem;
+  height: 56px;
+  padding: 0 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: transparent;
-  flex-wrap: wrap;
-}
-
-.hero-navbar.dark {
-  background: transparent;
-}
-
-.hero-navbar.light {
   background: transparent;
 }
 
@@ -51,63 +43,89 @@
   transform: scale(1.25);
 }
 
+/* ── Dropdown — portaled into <body>, must be fixed ── */
 .hero-mobile-menu {
-  width: 100%;
+  position: fixed;          /* anchors to viewport, not any parent */
+  top: 56px;                /* sits flush below the 56px navbar */
+  left: 0;
+  right: 0;
+  z-index: 998;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  padding: 1.2rem 0 0.5rem 0;
   border-top: 1px solid var(--border);
-  margin-top: 0.5rem;
+  border-bottom: 1px solid var(--border);
 }
 
 .hero-mobile-menu.dark {
-  background: rgba(11, 15, 26, 0.95);
-  padding: 1.2rem 2.5rem;
+  background: rgba(11, 15, 26, 0.97);
+  backdrop-filter: blur(10px);
 }
 
 .hero-mobile-menu.light {
-  background: rgba(240, 246, 255, 0.95);
-  padding: 1.2rem 2.5rem;
+  background: rgba(240, 246, 255, 0.97);
+  backdrop-filter: blur(10px);
 }
 
 .hero-mobile-menu a {
   color: var(--text-secondary);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
   text-decoration: none;
-  transition: color 0.2s ease;
+  padding: 0.9rem 2rem;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s ease, background 0.2s ease;
+  display: block;
+}
+
+.hero-mobile-menu a:last-child {
+  border-bottom: none;
 }
 
 .hero-mobile-menu a:hover {
   color: #3B82F6;
+  background: rgba(59, 130, 246, 0.05);
 }
 
 /* ── Large phones (480px) ── */
 @media (max-width: 480px) {
   .hero-navbar {
-    padding: 1.2rem 1.5rem;
+    padding: 0 1.25rem;
   }
 
-  .hero-theme-btn {
-    font-size: 1.2rem;
-  }
+  .hero-theme-btn { font-size: 1.2rem; }
+  .hero-hamburger { font-size: 1.3rem; }
 
-  .hero-hamburger {
-    font-size: 1.3rem;
+  .hero-mobile-menu a {
+    font-size: 0.9rem;
+    padding: 0.85rem 1.25rem;
   }
 }
 
 /* ── Small phones (360px) ── */
 @media (max-width: 360px) {
   .hero-navbar {
-    padding: 1rem 1.2rem;
+    padding: 0 1rem;
+  }
+
+  .hero-mobile-menu a {
+    font-size: 0.85rem;
+    padding: 0.8rem 1rem;
   }
 }
 
 /* ── Landscape phones ── */
 @media (max-height: 500px) and (orientation: landscape) {
   .hero-navbar {
-    padding: 0.8rem 2rem;
+    height: 48px;
+    padding: 0 1.5rem;
+  }
+
+  .hero-mobile-menu {
+    top: 48px;
+  }
+
+  .hero-mobile-menu a {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.85rem;
   }
 }
