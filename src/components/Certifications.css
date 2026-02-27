@@ -220,10 +220,6 @@
   transform: translateX(3px);
 }
 
-/* ═══════════════════════════════════════
-   MODAL
-   ═══════════════════════════════════════ */
-
 .cert-modal-overlay {
   position: fixed;
   inset: 0;
@@ -303,15 +299,14 @@
   background: rgba(59, 130, 246, 0.08);
 }
 
-/* ── Certificate image wrapper ── */
 .cert-pdf-wrapper {
   width: 100%;
   height: 400px;
-  background: var(--bg-secondary);        /* dark mode: dark, light mode: light */
+  background: var(--bg-secondary);        
   border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
-  justify-content: center;               /* centers image horizontally */
+  justify-content: center;               
   padding: 1rem;
   box-sizing: border-box;
 }
@@ -327,7 +322,6 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* ── Modal body ── */
 .cert-modal-body {
   padding: 1.5rem 1.8rem 1.8rem;
   display: flex;
@@ -396,10 +390,6 @@
   color: #ffffff;
   transform: translateY(-2px);
 }
-
-/* ═══════════════════════════════════════
-   RESPONSIVE
-   ═══════════════════════════════════════ */
 
 @media (max-width: 768px) {
   .certifications { padding: 60px 0; }

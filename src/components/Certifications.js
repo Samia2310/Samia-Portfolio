@@ -17,7 +17,7 @@ const certifications = [
       "Supervised Machine Learning: Regression and Classification is the first course of the Machine Learning Specialization, authorized by DeepLearning.AI and Stanford University and offered through Coursera, instructed by Andrew Ng. The course covers core supervised learning concepts including linear regression, logistic regression, and gradient descent, along with regularization techniques to prevent overfitting. Learners implement these algorithms hands-on using Python, NumPy, and scikit-learn, building a strong practical foundation alongside the theory. It is one of the most well-regarded entry-level ML courses available, designed to bridge the gap between mathematical intuition and real-world application.",
     tags: ["Python", "Machine Learning", "Regression", "Classification"],
   },
-  
+
   {
     id: 2,
     title: "Advanced Learning Algorithms",
@@ -32,6 +32,36 @@ const certifications = [
       "Advanced Learning Algorithms is the second course of the Machine Learning Specialization, authorized by DeepLearning.AI and Stanford University and offered through Coursera, instructed by Andrew Ng. The course covers neural networks in depth — how to build and train them using TensorFlow, with a solid understanding of forward propagation, backpropagation, and activation functions. It also introduces tree-based ensemble methods including decision trees, random forests, and XGBoost, which are widely used for structured data problems. Beyond the algorithms themselves, the course teaches practical ML engineering skills such as diagnosing bias and variance, evaluating model performance, and building a systematic approach to improving ML systems.",
     tags: ["Python", "Neural Networks", "Decision Trees", "Deep Learning"],
   },
+
+    {
+    id: 3,
+    title: "Use Canva to Create Social Media Visuals for Business",
+    issuer: "Coursera Project Network",
+    platform: "Coursera",
+    issued: "Jun 2025",
+    credentialId: "1P2JBDZL7073",
+    verifyUrl: "https://coursera.org/verify/1P2JBDZL7073",
+    pdfFile: "/Canva.pdf",
+    imageFile: "/Canva.jpg",
+    description:
+      "Use Canva to Create Social Media Visuals for Business is a guided project offered through the Coursera Project Network, designed to build practical skills in digital visual design. The course walks through the complete process of creating professional social media graphics using Canva; covering layout composition, typography, color schemes, and brand identity. Learners design platform-specific content for Instagram, Facebook, and other channels, understanding how visual consistency drives audience engagement. The project also emphasizes real-world business applications, teaching how to align design choices with marketing goals and brand messaging. This certification validates hands-on proficiency in Canva and the ability to independently produce polished, business-ready social media visuals.",
+    tags: ["Canva", "Graphic Design", "Social Media", "Visual Communication"],
+  },
+
+  {
+  id: 4,
+  title: "Create Your First Python Program From UST",
+  issuer: "UST",
+  platform: "Coursera",
+  issued: "Feb 2026",
+  credentialId: "51VG0FKAOB5E",
+  verifyUrl: "https://www.coursera.org/account/accomplishments/verify/51VG0FKAOB5E",
+  pdfFile: "/PythonUST.pdf",
+  imageFile: "/PythonUST.jpg",
+  description:
+    "Create Your First Python Program From UST is a hands-on guided project authorized by UST and offered through Coursera, instructed by Amit Yadav from the Machine Learning and Data Science domain. The course introduces Python programming from the ground up, guiding learners through writing, running, and understanding their very first Python programs. It covers fundamental programming concepts including variables, data types, basic input/output, and simple logic structures. The project-based format ensures learners gain real, practical coding experience rather than purely theoretical knowledge. This certification marks a foundational milestone in Python programming and serves as a solid starting point for further studies in data science, machine learning, and software development.",
+  tags: ["Python"],
+}
 ];
 
 export default function Certifications() {
