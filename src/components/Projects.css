@@ -1,0 +1,442 @@
+.projects {
+  padding: 80px 0;
+  background-color: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Background orbs ── */
+.projects-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.projects-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+.projects-orb-1 {
+  width: 500px;
+  height: 500px;
+  top: -10%;
+  right: -5%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.07) 0%, transparent 70%);
+}
+
+.projects-orb-2 {
+  width: 400px;
+  height: 400px;
+  bottom: -5%;
+  left: -5%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.07) 0%, transparent 70%);
+}
+
+.projects-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Header ── */
+.projects-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.projects-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.projects-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 520px;
+  margin: 0;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Project list ── */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Project card ── */
+.project-card {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 2rem;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.project-card:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.03) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.project-card.hovered::before {
+  opacity: 1;
+}
+
+/* ── Left ── */
+.project-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 0.4rem;
+}
+
+.project-number {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #3B82F6;
+  font-family: "Fira Code", monospace;
+  letter-spacing: 1px;
+  opacity: 0.7;
+}
+
+.project-line {
+  width: 1px;
+  flex: 1;
+  background: linear-gradient(to bottom, rgba(59, 130, 246, 0.4), transparent);
+  min-height: 40px;
+}
+
+/* ── Center ── */
+.project-center {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.project-top-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 0.2rem 0.7rem;
+  border-radius: 100px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.project-year {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-family: "Fira Code", monospace;
+}
+
+.project-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.2;
+  transition: color 0.2s ease;
+}
+
+.project-card.hovered .project-title {
+  color: #3B82F6;
+}
+
+.project-subtitle-text {
+  font-size: 0.88rem;
+  color: #3B82F6;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.project-description {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin: 0;
+  max-width: 600px;
+}
+
+/* ── Features ── */
+.project-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.project-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.feature-dot {
+  color: #3B82F6;
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+
+/* ── Tags ── */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.project-tag {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: "Fira Code", monospace;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.project-card.hovered .project-tag {
+  border-color: rgba(59, 130, 246, 0.3);
+  color: var(--text-primary);
+}
+
+/* ── Right — Links ── */
+.project-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.4rem;
+  align-items: flex-end;
+  min-width: 130px;
+}
+
+.project-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.project-link-btn svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.project-link-btn.primary {
+  background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+  color: #ffffff;
+  border: none;
+}
+
+.project-link-btn.primary:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+}
+
+.project-link-btn.secondary {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.project-link-btn.secondary:hover {
+  border-color: #3B82F6;
+  color: #3B82F6;
+  transform: translateY(-2px);
+}
+
+/* ── Large desktops (1200px) ── */
+@media (max-width: 1200px) {
+  .projects-title { font-size: 2.4rem; }
+}
+
+/* ── Small laptops (1024px) ── */
+@media (max-width: 1024px) {
+  .project-card {
+    grid-template-columns: 60px 1fr auto;
+    gap: 1.5rem;
+  }
+
+  .project-right { min-width: 120px; }
+  .project-title { font-size: 1.4rem; }
+}
+
+/* ── Tablets (768px) ── */
+@media (max-width: 768px) {
+  .projects { padding: 60px 0; }
+
+  .projects-header { margin-bottom: 2.5rem; }
+  .projects-title { font-size: 2rem; }
+  .projects-subtitle { font-size: 0.92rem; }
+
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 2rem 0;
+  }
+
+  .project-left {
+    flex-direction: row;
+    padding-top: 0;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .project-line {
+    flex: 1;
+    min-height: unset;
+    height: 1px;
+    width: auto;
+    background: linear-gradient(to right, rgba(59, 130, 246, 0.4), transparent);
+  }
+
+  .project-right {
+    flex-direction: row;
+    align-items: center;
+    min-width: unset;
+    padding-top: 0;
+  }
+
+  .project-link-btn {
+    flex: 1;
+  }
+
+  .project-title { font-size: 1.4rem; }
+  .project-description { font-size: 0.88rem; }
+}
+
+/* ── Large phones (480px) ── */
+@media (max-width: 480px) {
+  .projects { padding: 50px 0; }
+  .projects-container { padding: 0 1.2rem; }
+
+  .projects-title { font-size: 1.75rem; }
+  .projects-subtitle { font-size: 0.86rem; }
+
+  .project-card { padding: 1.5rem 0; gap: 1rem; }
+  .project-title { font-size: 1.25rem; }
+  .project-description { font-size: 0.84rem; }
+
+  .project-tags { gap: 0.4rem; }
+  .project-tag { font-size: 0.7rem; padding: 0.2rem 0.6rem; }
+
+  .project-link-btn {
+    padding: 0.55rem 1rem;
+    font-size: 0.78rem;
+  }
+}
+
+/* ── Small phones (360px) ── */
+@media (max-width: 360px) {
+  .projects-title { font-size: 1.55rem; }
+  .project-title { font-size: 1.1rem; }
+  .project-description { font-size: 0.8rem; }
+
+  .project-link-btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.74rem;
+  }
+}
+
+/* ── Landscape phones ── */
+@media (max-height: 500px) and (orientation: landscape) {
+  .projects { padding: 40px 0; }
+  .projects-header { margin-bottom: 2rem; }
+  .projects-title { font-size: 1.8rem; }
+
+  .project-card {
+    grid-template-columns: 60px 1fr auto;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+  }
+
+  .project-left {
+    flex-direction: column;
+    padding-top: 0.4rem;
+  }
+
+  .project-line {
+    width: 1px;
+    height: 30px;
+    min-height: unset;
+    background: linear-gradient(to bottom, rgba(59, 130, 246, 0.4), transparent);
+  }
+
+  .project-right {
+    flex-direction: column;
+    min-width: 110px;
+    padding-top: 0.4rem;
+  }
+}

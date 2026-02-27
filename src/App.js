@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Projects from "./components/Projects";
 import Certifications from "./components/Certifications";
+import Contact from "./components/Contact";
 import "./index.css";
 
 function App() {
@@ -25,10 +27,7 @@ function App() {
         <h1 style={{ color: "var(--text-primary)", fontSize: "3rem" }}>Skills Section</h1>
       </section>
 
-      <section id="projects" style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <h1 style={{ color: "var(--text-primary)", fontSize: "3rem" }}>Projects Section</h1>
-      </section>
-
+      <Projects />
       <Certifications />
 
       <section id="experiences" style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -39,9 +38,7 @@ function App() {
         <h1 style={{ color: "var(--text-primary)", fontSize: "3rem" }}>Achievements Section</h1>
       </section>
 
-      <section id="contact" style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <h1 style={{ color: "var(--text-primary)", fontSize: "3rem" }}>Contact Section</h1>
-      </section>
+      <Contact />
 
     </div>
   );

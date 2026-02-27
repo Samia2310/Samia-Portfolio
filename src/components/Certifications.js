@@ -33,7 +33,7 @@ const certifications = [
     tags: ["Python", "Neural Networks", "Decision Trees", "Deep Learning"],
   },
 
-    {
+  {
     id: 3,
     title: "Use Canva to Create Social Media Visuals for Business",
     issuer: "Coursera Project Network",
@@ -49,19 +49,34 @@ const certifications = [
   },
 
   {
-  id: 4,
-  title: "Create Your First Python Program From UST",
-  issuer: "UST",
-  platform: "Coursera",
-  issued: "Feb 2026",
-  credentialId: "51VG0FKAOB5E",
-  verifyUrl: "https://www.coursera.org/account/accomplishments/verify/51VG0FKAOB5E",
-  pdfFile: "/PythonUST.pdf",
-  imageFile: "/PythonUST.jpg",
-  description:
-    "Create Your First Python Program From UST is a hands-on guided project authorized by UST and offered through Coursera, instructed by Amit Yadav from the Machine Learning and Data Science domain. The course introduces Python programming from the ground up, guiding learners through writing, running, and understanding their very first Python programs. It covers fundamental programming concepts including variables, data types, basic input/output, and simple logic structures. The project-based format ensures learners gain real, practical coding experience rather than purely theoretical knowledge. This certification marks a foundational milestone in Python programming and serves as a solid starting point for further studies in data science, machine learning, and software development.",
-  tags: ["Python"],
-}
+    id: 4,
+    title: "Create Your First Python Program From UST",
+    issuer: "UST",
+    platform: "Coursera",
+    issued: "Feb 2026",
+    credentialId: "51VG0FKAOB5E",
+    verifyUrl: "https://www.coursera.org/account/accomplishments/verify/51VG0FKAOB5E",
+    pdfFile: "/PythonUST.pdf",
+    imageFile: "/PythonUST.jpg",
+    description:
+      "Create Your First Python Program From UST is a hands-on guided project authorized by UST and offered through Coursera, instructed by Amit Yadav from the Machine Learning and Data Science domain. The course introduces Python programming from the ground up, guiding learners through writing, running, and understanding their very first Python programs. It covers fundamental programming concepts including variables, data types, basic input/output, and simple logic structures. The project-based format ensures learners gain real, practical coding experience rather than purely theoretical knowledge. This certification marks a foundational milestone in Python programming and serves as a solid starting point for further studies in data science, machine learning, and software development.",
+    tags: ["Python"],
+  },
+
+  {
+    id: 5,
+    title: "Build a Full Website using WordPress",
+    issuer: "Coursera Project Network",
+    platform: "Coursera",
+    issued: "Jun 2025",
+    credentialId: "1LUA41Y2LYBV",
+    verifyUrl: "https://www.coursera.org/account/accomplishments/verify/1LUA41Y2LYBV",
+    pdfFile: "/WordPress.pdf",
+    imageFile: "/WordPress.jpg",
+    description:
+      "Build a Full Website using WordPress is a guided project authorized by the Coursera Project Network and offered through Coursera, instructed by Stacey Shanklin-Langford, Subject Matter Expert at Freedom Learning Group. The course provides a comprehensive, hands-on walkthrough of building a complete, professional website from scratch using WordPress — one of the most widely used content management systems in the world. Learners work through setting up WordPress, configuring themes, managing pages and posts, and customizing the site layout to achieve a polished, functional result. The project covers essential web development concepts including site structure, navigation design, plugin integration, and content management. This certification demonstrates practical proficiency in WordPress and the ability to independently plan, build, and launch a fully functional website.",
+    tags: ["WordPress", "Web Development", "CMS", "Website Design"],
+  }
 ];
 
 export default function Certifications() {
