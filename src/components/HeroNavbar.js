@@ -35,7 +35,7 @@ export default function HeroNavbar({ dark, toggleTheme }) {
     };
   }, [menuOpen]);
 
-  const navLinks = ["About", "Skills", "Projects", "Certification", "Experience", "Contact"];
+  const navLinks = ["About", "Skills", "Projects", "Certifications", "Experiences","Achievements", "Contact"];
 
   if (!visible) return null;
 

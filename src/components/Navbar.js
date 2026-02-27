@@ -7,10 +7,10 @@ export default function Navbar({ dark, toggleTheme }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
-  const navLinks = ["About", "Skills", "Projects", "Certification", "Experience", "Contact"];
+  const navLinks = ["About", "Skills", "Projects", "Certifications", "Experiences", "Achievements", "Contact"];
+
   const themeClass = dark ? "dark" : "light";
 
-  /* Scroll detection */
   useEffect(() => {
     const handleScroll = () => {
       const heroHeight =
@@ -25,9 +25,8 @@ export default function Navbar({ dark, toggleTheme }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  /* Scroll spy observer */
   useEffect(() => {
-    const sections = ["about", "skills", "projects", "contact"];
+    const sections = ["about", "skills", "projects", "certifications", "experiences", "achievements", "contact"];
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -37,7 +36,7 @@ export default function Navbar({ dark, toggleTheme }) {
           }
         });
       },
-      { threshold: 0.4 }
+      { threshold: 0.3 }
     );
 
     sections.forEach((id) => {
@@ -56,7 +55,7 @@ export default function Navbar({ dark, toggleTheme }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  /* Lock body scroll */
+  /* Lock body scroll when drawer open */
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
 
@@ -70,7 +69,6 @@ export default function Navbar({ dark, toggleTheme }) {
   return (
     <>
       <nav className={"navbar scrolled " + themeClass}>
-
         <a href="#hero" className="logo">
           Samia Tabassum Chowdhury
         </a>
@@ -87,7 +85,9 @@ export default function Navbar({ dark, toggleTheme }) {
             <li key={link}>
               <a
                 href={"#" + link.toLowerCase()}
-                className={activeSection === link.toLowerCase() ? "active" : ""}
+                className={
+                  activeSection === link.toLowerCase() ? "active" : ""
+                }
               >
                 {link}
               </a>
@@ -103,10 +103,9 @@ export default function Navbar({ dark, toggleTheme }) {
             </button>
           </li>
         </ul>
-
       </nav>
 
-      {/* Drawer */}
+      {/* Mobile Drawer */}
       {menuOpen &&
         createPortal(
           <>
@@ -124,7 +123,9 @@ export default function Navbar({ dark, toggleTheme }) {
                     onClick={() => setMenuOpen(false)}
                     className={
                       "drawer-link " +
-                      (activeSection === link.toLowerCase() ? "active" : "")
+                      (activeSection === link.toLowerCase()
+                        ? "active"
+                        : "")
                     }
                   >
                     {link}

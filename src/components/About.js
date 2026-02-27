@@ -57,11 +57,12 @@ export default function About() {
           </div>
 
           <div className="about-buttons">
-            <a href="/resume.pdf" className="about-btn primary" download>
-              Download Resume ↓
+            <a href="/Samia tabassum Chowdhury's Resume.pdf" className="about-btn primary" target="_blank" rel="noreferrer">
+              Resume
             </a>
-            <a href="/portfolio.pdf" className="about-btn secondary" download>
-              Download Portfolio ↓
+
+            <a href="samia-portfolio-gold.vercel.app" className="about-btn secondary" target="_blank" rel="noreferrer">
+              Portfolio
             </a>
           </div>
 

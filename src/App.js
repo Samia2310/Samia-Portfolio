@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Certifications from "./components/Certifications";
 import "./index.css";
 
 function App() {
@@ -28,12 +29,14 @@ function App() {
         <h1 style={{ color: "var(--text-primary)", fontSize: "3rem" }}>Projects Section</h1>
       </section>
 
-      <section id="certification" style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <h1 style={{ color: "var(--text-primary)", fontSize: "3rem" }}>Certification Section</h1>
+      <Certifications />
+
+      <section id="experiences" style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <h1 style={{ color: "var(--text-primary)", fontSize: "3rem" }}>Experience Section</h1>
       </section>
 
-      <section id="experience" style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <h1 style={{ color: "var(--text-primary)", fontSize: "3rem" }}>Experience Section</h1>
+      <section id="achievements" style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <h1 style={{ color: "var(--text-primary)", fontSize: "3rem" }}>Achievements Section</h1>
       </section>
 
       <section id="contact" style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
