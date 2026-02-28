@@ -7,7 +7,7 @@ export default function Navbar({ dark, toggleTheme }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
-  const navLinks = ["About", "Skills", "Projects", "Certifications", "Experiences", "Achievements", "Contact"];
+  const navLinks = ["About", "Projects", "Certifications", "Experiences", "Achievements", "Contact"];
 
   const themeClass = dark ? "dark" : "light";
 
@@ -26,7 +26,7 @@ export default function Navbar({ dark, toggleTheme }) {
   }, []);
 
   useEffect(() => {
-    const sections = ["about", "skills", "projects", "certifications", "experiences", "achievements", "contact"];
+    const sections = ["about", "projects", "certifications", "experiences", "achievements", "contact"];
 
     const observer = new IntersectionObserver(
       (entries) => {
