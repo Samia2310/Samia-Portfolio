@@ -39,7 +39,7 @@ const certifications = [
     issuer: "Grameenphone Academy",
     platform: "Grameenphone Ltd.",
     issued: "Mar 2026",
-    credentialId: " ",
+    credentialId: "c884624a8256",
     verifyUrl: "https://www.grameenphone.academy/cert/c884624a8256",
     pdfFile: "/GP1.pdf",
     imageFile: "/GP1.jpg",
