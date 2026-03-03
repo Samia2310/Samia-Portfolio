@@ -35,6 +35,21 @@ const certifications = [
 
   {
     id: 3,
+    title: "Design System Thinking with AI",
+    issuer: "Grameenphone Academy",
+    platform: "Grameenphone Ltd.",
+    issued: "Mar 2026",
+    credentialId: " ",
+    verifyUrl: "https://www.grameenphone.academy/cert/c884624a8256",
+    pdfFile: "/GP1.pdf",
+    imageFile: "/GP1.jpg",
+    description:
+      "Design System Thinking with AI is a professional certification offered by Grameenphone Academy, focused on integrating design thinking methodologies with artificial intelligence tools. The course explores user-centered problem solving, system-level analysis, and AI-driven innovation strategies. Learners gain hands-on experience in applying empathy mapping, ideation frameworks, prototyping, and data-informed decision making to real-world business challenges. The program emphasizes holistic thinking, understanding interconnected systems, and leveraging AI to enhance product development, customer experience, and strategic planning. This certification validates practical competency in system thinking, AI-assisted design processes, and innovation-oriented solution building.",
+    tags: ["Design Thinking", "System Thinking", "Artificial Intelligence", "Innovation", "Product Strategy"],
+  },
+
+  {
+    id: 4,
     title: "Use Canva to Create Social Media Visuals for Business",
     issuer: "Coursera Project Network",
     platform: "Coursera",
@@ -49,7 +64,7 @@ const certifications = [
   },
 
   {
-    id: 4,
+    id: 5,
     title: "Create Your First Python Program From UST",
     issuer: "UST",
     platform: "Coursera",
@@ -64,7 +79,7 @@ const certifications = [
   },
 
   {
-    id: 5,
+    id: 6,
     title: "Build a Full Website using WordPress",
     issuer: "Coursera Project Network",
     platform: "Coursera",
