@@ -10,7 +10,7 @@ export default function About() {
           <div className="about-left">
             <span className="section-tag">About Me</span>
             <h2>
-              CSE Student &
+              Web Developer &
               <span style={{
                 background: "linear-gradient(135deg, #3B82F6, #8B5CF6)",
                 WebkitBackgroundClip: "text",

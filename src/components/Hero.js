@@ -62,11 +62,11 @@ export default function Hero({ dark, toggleTheme }) {
 
             <div className="hero-subtitle-row">
               <span className="hero-subtitle-accent" />
-              <h2 className="hero-subtitle">CSE Student & AI/ML Developer</h2>
+              <h2 className="hero-subtitle">AI/ML & Web Developer</h2>
             </div>
 
             <p className="hero-description">
-              A final year Computer Science student specializing in Artificial
+              A final year Computer Science and Engineering student specializing in Artificial
               Intelligence, Machine Learning, and Web Development. I build
               intelligent systems and clean web experiences that solve real problems.
             </p>

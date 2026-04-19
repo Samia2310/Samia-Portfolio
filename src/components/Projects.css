@@ -168,12 +168,253 @@
   border-radius: 100px;
 }
 
+/* Project type badge — base */
+.project-type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.7rem;
+  border-radius: 100px;
+  letter-spacing: 0.3px;
+  cursor: default;
+  white-space: nowrap;
+}
+ 
+.project-type-badge.group {
+  color: #8B5CF6;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  cursor: pointer;
+  background: none;
+  font-family: inherit;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+ 
+.project-type-badge.group:hover {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.45);
+}
+ 
+.project-type-badge.personal {
+  color: #3B82F6;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+}
+ 
+/* Chevron icon inside the button */
+.team-chevron {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+  color: #8B5CF6;
+}
+ 
+.team-chevron.open {
+  transform: rotate(180deg);
+}
+ 
+/* In-progress status override */
+.project-status.in-progress {
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+ 
+.project-status.in-progress .status-dot {
+  background: #f59e0b;
+}
+ 
+/* ── Dropdown wrapper ── */
+.team-dropdown-wrapper {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+ 
+/* ── Dropdown panel ── */
+.team-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 50;
+  min-width: 200px;
+  background: #1a1a2e;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 12px;
+  padding: 0.6rem 0.5rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(139, 92, 246, 0.1);
+  opacity: 0;
+  transform: translateY(-6px) scale(0.97);
+  pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+ 
+.team-dropdown.open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+}
+ 
+/* Label inside dropdown */
+.team-dropdown-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(139, 92, 246, 0.7);
+  padding: 0.1rem 0.6rem 0.5rem;
+  margin: 0;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+}
+ 
+/* Each member row */
+.team-dropdown-member {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.18s ease;
+  margin-top: 0.2rem;
+}
+ 
+.team-dropdown-member:hover {
+  background: rgba(139, 92, 246, 0.12);
+}
+ 
+/* Member name — white */
+.team-member-name {
+  flex: 1;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ffffff;
+  transition: color 0.18s ease;
+}
+ 
+.team-dropdown-member:hover .team-member-name {
+  color: #c4b5fd;
+}
+ 
+/* GitHub icon */
+.team-gh-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: rgba(139, 92, 246, 0.6);
+  transition: color 0.18s ease;
+}
+ 
+.team-dropdown-member:hover .team-gh-icon {
+  color: #8B5CF6;
+}
+ 
+/* Arrow icon */
+.team-arrow-icon {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.2);
+  transition: color 0.18s ease, transform 0.18s ease;
+}
+ 
+.team-dropdown-member:hover .team-arrow-icon {
+  color: #8B5CF6;
+  transform: translate(2px, -2px);
+}
+ 
+
 .status-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background: #10b981;
   animation: pulse 2s infinite;
+}
+
+/* Member row is now a div, not an <a> — reset to flex */
+.team-dropdown-member {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.55rem 0.6rem;
+  border-radius: 8px;
+  margin-top: 0.2rem;
+  transition: background 0.18s ease;
+}
+ 
+.team-dropdown-member:hover {
+  background: rgba(139, 92, 246, 0.12);
+}
+ 
+/* GitHub icon — clickable */
+.team-member-gh-link {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+ 
+.team-gh-icon {
+  width: 14px;
+  height: 14px;
+  color: rgba(139, 92, 246, 0.6);
+  transition: color 0.18s ease;
+}
+ 
+.team-member-gh-link:hover .team-gh-icon {
+  color: #8B5CF6;
+}
+ 
+/* Name */
+.team-member-name {
+  flex: 1;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+ 
+/* Email icon link */
+.team-member-email-link {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  opacity: 0.5;
+  transition: opacity 0.18s ease, color 0.18s ease;
+}
+ 
+.team-member-email-link:hover {
+  opacity: 1;
+}
+ 
+.team-email-icon {
+  width: 13px;
+  height: 13px;
+  color: #a78bfa;
+  transition: color 0.18s ease;
+}
+ 
+.team-member-email-link:hover .team-email-icon {
+  color: #c4b5fd;
+}
+ 
+/* Arrow */
+.team-arrow-icon {
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.18);
+  transition: color 0.18s ease, transform 0.18s ease;
+}
+ 
+.team-dropdown-member:hover .team-arrow-icon {
+  color: #8B5CF6;
+  transform: translate(2px, -2px);
 }
 
 @keyframes pulse {
