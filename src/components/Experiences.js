@@ -10,7 +10,6 @@ const experiences = [
     description:
       "Co-instructed the Residential Semester Machine Learning course, guiding students through foundational and applied ML concepts with hands-on sessions and mentorship.",
     tags: ["Machine Learning", "Teaching", "Mentorship"],
-    color: "#3B82F6",
   },
   {
     id: 2,
@@ -21,7 +20,6 @@ const experiences = [
     description:
       "Served as Team Leader for the BRAC University Computer Club's Upgrade Hour Program, coordinating team efforts and fostering a collaborative learning environment.",
     tags: ["Team Lead", "Program Management", "BUCC"],
-    color: "#8B5CF6",
   },
   {
     id: 3,
@@ -32,7 +30,6 @@ const experiences = [
     description:
       "Held a senior executive position at BUCC, contributing to club operations, event planning, and the growth of the university's tech community.",
     tags: ["Executive", "Event Planning", "Community"],
-    color: "#06b6d4",
   },
   {
     id: 4,
@@ -43,7 +40,6 @@ const experiences = [
     description:
       "Volunteered at TECHCONNECTS, one of the largest engineering and computer science career fairs, assisting with event coordination and connecting students with industry professionals.",
     tags: ["Career Fair", "Volunteering", "Networking"],
-    color: "#10b981",
   },
   {
     id: 5,
@@ -54,7 +50,6 @@ const experiences = [
     description:
       "Participated as a volunteer in the Silver Jubilee Celebration of the Dhanmondi Branch of VNSC, supporting event logistics and community engagement activities.",
     tags: ["Community", "Event Support", "Volunteering"],
-    color: "#f59e0b",
   },
 ];
 
@@ -90,7 +85,7 @@ const typeIcon = {
 
 export default function Experience() {
   return (
-    <section className="experience" id="experience">
+    <section className="experience" id="experiences">
       <div className="exp-bg">
         <div className="exp-orb exp-orb-1" />
         <div className="exp-orb exp-orb-2" />
@@ -113,7 +108,7 @@ export default function Experience() {
           <div className="exp-rail" />
 
           {experiences.map((exp, index) => (
-            <div key={exp.id} className="exp-item" style={{ "--accent": exp.color }}>
+            <div key={exp.id} className="exp-item">
               {/* Timeline node */}
               <div className="exp-node">
                 <div className="exp-node-ring" />

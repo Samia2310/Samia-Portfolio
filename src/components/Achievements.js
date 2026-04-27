@@ -84,7 +84,7 @@ export default function Achievements() {
             Achievements &amp; <span className="gradient-text">Awards</span>
           </h2>
           <p className="ach-subtitle">
-            Scholarships earned and competitions placed in — a record of effort
+            Scholarships earned and competitions placed in, a record of effort
             recognised beyond the classroom.
           </p>
         </div>

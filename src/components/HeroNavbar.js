@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
+import { CloseIcon, MenuIcon, MoonIcon, SunIcon } from "./Icons";
 import "./HeroNavbar.css";
 
 export default function HeroNavbar({ dark, toggleTheme }) {
@@ -35,30 +36,36 @@ export default function HeroNavbar({ dark, toggleTheme }) {
     };
   }, [menuOpen]);
 
-  const navLinks = ["About", "Projects", "Certifications", "Experiences","Achievements", "Contact"];
+  const navLinks = ["About", "Projects", "Certifications", "Experiences", "Achievements", "Contact"];
 
   if (!visible) return null;
 
   return (
     <>
       <header className={"hero-navbar " + (dark ? "dark" : "light")}>
-
         <button
           className="hero-hamburger"
           onClick={() => setMenuOpen(prev => !prev)}
-          aria-label="Toggle menu"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
-          {menuOpen ? "✕" : "☰"}
+          {menuOpen ? (
+            <CloseIcon className="nav-control-icon" />
+          ) : (
+            <MenuIcon className="nav-control-icon" />
+          )}
         </button>
 
         <button
           className="hero-theme-btn"
           onClick={toggleTheme}
-          aria-label="Toggle theme"
+          aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
         >
-          {dark ? "☀️" : "🌙"}
+          {dark ? (
+            <SunIcon className="theme-icon-svg" />
+          ) : (
+            <MoonIcon className="theme-icon-svg" />
+          )}
         </button>
-
       </header>
 
       {menuOpen && createPortal(
@@ -69,7 +76,6 @@ export default function HeroNavbar({ dark, toggleTheme }) {
           />
 
           <div className={"hero-mobile-menu " + (dark ? "dark" : "light")}>
-
             <nav className="drawer-links">
               {navLinks.map((link) => (
                 <a
@@ -82,7 +88,6 @@ export default function HeroNavbar({ dark, toggleTheme }) {
                 </a>
               ))}
             </nav>
-
           </div>
         </>,
         document.body

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { UserIcon, UsersIcon } from "./Icons";
 import "./Projects.css";
 
 const projects = [
@@ -15,9 +16,9 @@ const projects = [
         email: "sabbir@example.com",
       },
       {
-        name: "Jauad Ahmed",
-        github: "https://github.com/placeholder-jauad",
-        email: "jauad@example.com",
+        name: "Jauad Ahmed Sadik",
+        github: "https://github.com/JauadAhmed",
+        email: "jauadahmedsadik@gmail.com",
       },
     ],
     description:
@@ -134,16 +135,12 @@ export default function Projects() {
               onMouseEnter={() => setHovered(project.id)}
               onMouseLeave={() => setHovered(null)}
             >
-              {/* Left — Number + line */}
               <div className="project-left">
                 <span className="project-number">{project.number}</span>
                 <div className="project-line" />
               </div>
 
-              {/* Center — Content */}
               <div className="project-center">
-
-                {/* Row 1: status + year + type badge */}
                 <div className="project-top-row">
                   <div className="project-meta">
                     <span
@@ -158,7 +155,6 @@ export default function Projects() {
 
                     <span className="project-year">{project.year}</span>
 
-                    {/* Group Project → clickable dropdown, Personal → static badge */}
                     {project.type === "Group Project" ? (
                       <div className="team-dropdown-wrapper">
                         <button
@@ -169,7 +165,7 @@ export default function Projects() {
                           }}
                           aria-expanded={teamOpen}
                         >
-                          <span>👥</span>
+                          <UsersIcon className="project-badge-icon" />
                           <span>{project.type}</span>
                           <svg
                             className={"team-chevron" + (teamOpen ? " open" : "")}
@@ -186,7 +182,6 @@ export default function Projects() {
                           <p className="team-dropdown-label">Team Members</p>
                           {project.team.map((member, i) => (
                             <div key={i} className="team-dropdown-member">
-                              {/* GitHub link */}
                               <a
                                 href={member.github}
                                 target="_blank"
@@ -204,10 +199,8 @@ export default function Projects() {
                                 </svg>
                               </a>
 
-                              {/* Name */}
                               <span className="team-member-name">{member.name}</span>
 
-                              {/* Email icon */}
                               <a
                                 href={`mailto:${member.email}`}
                                 className="team-member-email-link"
@@ -226,7 +219,6 @@ export default function Projects() {
                                 </svg>
                               </a>
 
-                              {/* Arrow */}
                               <svg
                                 className="team-arrow-icon"
                                 viewBox="0 0 24 24"
@@ -242,7 +234,7 @@ export default function Projects() {
                       </div>
                     ) : (
                       <span className="project-type-badge personal">
-                        <span>👤</span>
+                        <UserIcon className="project-badge-icon" />
                         <span>{project.type}</span>
                       </span>
                     )}
@@ -256,7 +248,7 @@ export default function Projects() {
                 <div className="project-features">
                   {project.features.map((f, i) => (
                     <span key={i} className="project-feature">
-                      <span className="feature-dot">▹</span>
+                      <span className="feature-dot">&#9657;</span>
                       {f}
                     </span>
                   ))}
@@ -271,7 +263,6 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* Right — Links */}
               <div className="project-right">
                 <a
                   href={project.liveUrl}

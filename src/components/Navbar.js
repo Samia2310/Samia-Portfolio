@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
+import { CloseIcon, MenuIcon, MoonIcon, SunIcon } from "./Icons";
 import "./Navbar.css";
 
 export default function Navbar({ dark, toggleTheme }) {
@@ -8,7 +9,6 @@ export default function Navbar({ dark, toggleTheme }) {
   const [activeSection, setActiveSection] = useState("");
 
   const navLinks = ["About", "Projects", "Certifications", "Experiences", "Achievements", "Contact"];
-
   const themeClass = dark ? "dark" : "light";
 
   useEffect(() => {
@@ -47,7 +47,6 @@ export default function Navbar({ dark, toggleTheme }) {
     return () => observer.disconnect();
   }, []);
 
-  /* Close menu on resize */
   useEffect(() => {
     const handleResize = () => setMenuOpen(false);
 
@@ -55,7 +54,6 @@ export default function Navbar({ dark, toggleTheme }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  /* Lock body scroll when drawer open */
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
 
@@ -69,15 +67,20 @@ export default function Navbar({ dark, toggleTheme }) {
   return (
     <>
       <nav className={"navbar scrolled " + themeClass}>
-        <a href="#hero" className="logo">
+        <a href="#about" className="logo">
           Samia Tabassum Chowdhury
         </a>
 
         <button
           className="hamburger"
           onClick={() => setMenuOpen(prev => !prev)}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
-          {menuOpen ? "✕" : "☰"}
+          {menuOpen ? (
+            <CloseIcon className="nav-control-icon" />
+          ) : (
+            <MenuIcon className="nav-control-icon" />
+          )}
         </button>
 
         <ul className="nav-links">
@@ -98,14 +101,18 @@ export default function Navbar({ dark, toggleTheme }) {
             <button
               className={"theme-icon-btn " + themeClass}
               onClick={toggleTheme}
+              aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
             >
-              {dark ? "☀️" : "🌙"}
+              {dark ? (
+                <SunIcon className="theme-icon-svg" />
+              ) : (
+                <MoonIcon className="theme-icon-svg" />
+              )}
             </button>
           </li>
         </ul>
       </nav>
 
-      {/* Mobile Drawer */}
       {menuOpen &&
         createPortal(
           <>
