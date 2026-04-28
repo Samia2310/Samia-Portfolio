@@ -35,6 +35,20 @@ const certifications = [
 
   {
     id: 3,
+    title: "Network Smarter with AI",
+    issuer: "Grameenphone Academy",
+    platform: "Grameenphone Ltd.",
+    issued: "Apr 2026",
+    credentialId: "50f799c2b135",
+    verifyUrl: "https://www.grameenphone.academy/cert/50f799c2b135",
+    pdfFile: "/Network Smarter with AI.pdf",
+    imageFile: "/Network Smarter with AI.png",
+    description: "Network Smarter with AI is a certification course offered by Grameenphone Academy, designed to equip learners with the knowledge and skills to leverage artificial intelligence in professional and digital networking contexts. The course explores how AI tools can enhance productivity, communication, and strategic thinking in today's fast-evolving digital landscape. Learners gain practical exposure to AI-driven approaches for career development, problem-solving, and building meaningful professional connections. Issued by Grameenphone Ltd. under its Academy's AI Mission initiative, this certification reflects the completion of a structured learning path focused on future-ready digital skills.",
+    tags: ["Artificial Intelligence", "Digital Skills", "Professional Networking", "Career Readiness", "Grameenphone Academy"],
+  },
+
+  {
+    id: 4,
     title: "Design System Thinking with AI",
     issuer: "Grameenphone Academy",
     platform: "Grameenphone Ltd.",
@@ -49,7 +63,7 @@ const certifications = [
   },
 
   {
-    id: 4,
+    id: 5,
     title: "Use Canva to Create Social Media Visuals for Business",
     issuer: "Coursera Project Network",
     platform: "Coursera",
@@ -64,7 +78,7 @@ const certifications = [
   },
 
   {
-    id: 5,
+    id: 6,
     title: "Create Your First Python Program From UST",
     issuer: "UST",
     platform: "Coursera",
@@ -79,7 +93,7 @@ const certifications = [
   },
 
   {
-    id: 6,
+    id: 7,
     title: "Build a Full Website using WordPress",
     issuer: "Coursera Project Network",
     platform: "Coursera",
