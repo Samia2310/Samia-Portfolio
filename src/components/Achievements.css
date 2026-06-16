@@ -232,6 +232,7 @@
   line-height: 1.78;
   margin: 0;
   max-width: 680px;
+  text-align: justify;
 }
 
 .ach-sc-tags {

@@ -485,6 +485,7 @@
   line-height: 1.8;
   margin: 0;
   max-width: 600px;
+  text-align: justify;
 }
 
 /* ── Features ── */

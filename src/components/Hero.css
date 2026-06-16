@@ -337,6 +337,7 @@
   line-height: 1.8;
   max-width: 480px;
   margin: 0;
+  text-align: justify;
   animation: fadeSlideUp 0.7s ease 0.85s forwards;
   opacity: 0;
 }
