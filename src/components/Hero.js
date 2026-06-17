@@ -73,10 +73,13 @@ export default function Hero({ dark, toggleTheme }) {
 
             <div className="hero-stack">
               <span>Python</span>
-              <span>Machine Learning</span>
               <span>React</span>
+              <span>Next.js</span>
+              <span>SQL</span>
+              <span>Data Analysis</span>
+              <span>Machine Learning</span>
               <span>Deep Learning</span>
-              <span>Django</span>
+              
             </div>
 
             <div className="hero-social">
