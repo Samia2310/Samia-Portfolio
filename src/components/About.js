@@ -16,13 +16,10 @@ export default function About() {
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
-              }}> AI/ML Enthusiast</span>
+              }}> Data Analytics Enthusiast</span>
             </h2>
             <p>
-              Hi! I'm Samia, a 4th year Computer Science & Engineering student
-              with a passion for Artificial Intelligence, Machine Learning, and
-              Web Development. I love building projects that sit at the intersection
-              of intelligent systems and clean user experiences.
+              Hi! I'm Samia, a Computer Science & Engineering graduate with a passion for Data Analytics, Artificial Intelligence, Machine Learning, and Web Development. I love building projects that combine data-driven insights, intelligent systems, and clean user experiences.
             </p>
             <p>
               From academic research to personal builds, I enjoy solving real-world
@@ -38,11 +35,11 @@ export default function About() {
               </div>
               <div className="info-item">
                 <span className="info-label">Year</span>
-                <span className="info-value">4th Year (Final)</span>
+                <span className="info-value">Graduated in June, 2026</span>
               </div>
               <div className="info-item">
                 <span className="info-label">Focus</span>
-                <span className="info-value">AI/ML + Web Dev</span>
+                <span className="info-value">Data Analytics + Web Dev</span>
               </div>
               <div className="info-item">
                 <span className="info-label">Location</span>
@@ -67,7 +64,7 @@ export default function About() {
           <div className="mobile-header">
             <span className="section-tag">About Me</span>
             <h2>
-              CSE Student &
+              CSE Graduate &
               <span style={{
                 background: "linear-gradient(135deg, #3B82F6, #8B5CF6)",
                 WebkitBackgroundClip: "text",
@@ -76,14 +73,10 @@ export default function About() {
               }}> AI/ML Enthusiast</span>
             </h2>
             <p>
-              Hi! I'm Samia, a 4th year Computer Science & Engineering student
-              with a passion for Artificial Intelligence, Machine Learning, and
-              Web Development. I love building projects that sit at the intersection
-              of intelligent systems and clean user experiences.
+              Hi! I'm Samia, a Computer Science & Engineering graduate with a passion for Data Analytics, Artificial Intelligence, Machine Learning, and Web Development. I love building projects that combine data-driven insights, intelligent systems, and clean user experiences.
             </p>
             <p>
-              From academic research to personal builds, I enjoy solving real-world
-              problems through code and I'm always learning something new along the way.
+              From academic research to personal projects, I enjoy solving real-world problems through code, analyzing data, and continuously learning new technologies along the way.
             </p>
           </div>
 
@@ -98,11 +91,11 @@ export default function About() {
             </div>
             <div className="info-item">
               <span className="info-label">Year</span>
-              <span className="info-value">4th Year (Final)</span>
+              <span className="info-value">Graduated in June, 2026</span>
             </div>
             <div className="info-item">
               <span className="info-label">Focus</span>
-              <span className="info-value">AI/ML + Web Dev</span>
+              <span className="info-value">Data Analytics + Web Dev</span>
             </div>
             <div className="info-item">
               <span className="info-label">Location</span>

@@ -62,13 +62,11 @@ export default function Hero({ dark, toggleTheme }) {
 
             <div className="hero-subtitle-row">
               <span className="hero-subtitle-accent" />
-              <h2 className="hero-subtitle">AI/ML & Web Developer</h2>
+              <h2 className="hero-subtitle">Data Analytics & Web Developer</h2>
             </div>
 
             <p className="hero-description">
-              A final year Computer Science and Engineering student specializing in Artificial
-              Intelligence, Machine Learning, and Web Development. I build
-              intelligent systems and clean web experiences that solve real problems.
+              Computer Science and Engineering graduate with a strong foundation in software development and a growing interest in Data Analytics, Artificial Intelligence, and Machine Learning. Experienced in developing full-stack web applications, with a passion for delivering impactful, data-driven, and user-focused solutions that solve real-world problems and create meaningful value.
             </p>
 
             <div className="hero-stack">
