@@ -120,6 +120,47 @@ const projects = [
     status: "Live",
     year: "2025",
   },
+  {
+    id: 6,
+    number: "01",
+    title: "Fraud Transaction Detection",
+    subtitle: "Machine Learning Project",
+    type: "AI/ML Project",
+    description:
+      "A machine learning project for detecting fraudulent transactions.",
+    tags: ["Python", "Machine Learning", "Fraud Detection"],
+    githubUrl:
+      "https://github.com/Samia2310/Fraud-Transaction-Detection_Machine-Learning-Project-",
+    features: ["Transaction fraud detection", "Machine learning classification"],
+    status: "Live",
+  },
+  {
+    id: 7,
+    number: "02",
+    title: "Travel Insurance Prediction",
+    subtitle: "Machine Learning Project",
+    type: "AI/ML Project",
+    description:
+      "A machine learning project focused on travel insurance.",
+    tags: ["Python", "Machine Learning", "Insurance"],
+    githubUrl:
+      "https://github.com/Samia2310/Travel-Insurance_Machine-Learning-Project-",
+    features: ["Travel insurance data analysis", "Machine learning prediction"],
+    status: "Live",
+  },
+  {
+    id: 8,
+    number: "03",
+    title: "Travel Insurance Prediction",
+    subtitle: "Machine Learning Project",
+    type: "AI/ML Project",
+    description: "A machine learning project focused on travel insurance.",
+    tags: ["Python", "Machine Learning", "Insurance"],
+    githubUrl:
+      "https://github.com/Samia2310/Travel-Insurance_Machine-Learning-Project-",
+    features: ["Travel insurance data analysis", "Machine learning prediction"],
+    status: "Live",
+  },
 ];
 
 export default function Projects() {
@@ -140,13 +181,22 @@ export default function Projects() {
             Featured <span className="gradient-text">Projects</span>
           </h2>
           <p className="projects-subtitle">
-            A collection of things I've built. From games to intelligent systems.
-            Each project reflects a problem I wanted to solve.
+            A selection of AI/ML and data analytics projects, alongside web
+            applications built to solve practical problems.
           </p>
         </div>
 
-        <div className="projects-list">
-          {projects.map((project) => (
+        {[
+          { id: "ai-ml", title: "AI/ML Projects", items: projects.slice(5) },
+          { id: "web", title: "Web Projects", items: projects.slice(0, 5) },
+        ].map((section) => (
+          <div className="project-section" key={section.id}>
+            <h3 className="project-section-title">
+              <span className="project-section-marker" />
+              {section.title}
+            </h3>
+            <div className="projects-list">
+          {section.items.map((project) => (
             <div
               key={project.id}
               className={
@@ -174,7 +224,9 @@ export default function Projects() {
                       {project.status}
                     </span>
 
-                    <span className="project-year">{project.year}</span>
+                    {project.year && (
+                      <span className="project-year">{project.year}</span>
+                    )}
 
                     {project.type === "Group Project" ? (
                       <div className="team-dropdown-wrapper">
@@ -285,19 +337,21 @@ export default function Projects() {
               </div>
 
               <div className="project-right">
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="project-link-btn primary"
-                >
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" y1="14" x2="21" y2="3" />
-                  </svg>
-                  Live Demo
-                </a>
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="project-link-btn primary"
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                    Live Demo
+                  </a>
+                )}
 
                 <a
                   href={project.githubUrl}
@@ -313,7 +367,9 @@ export default function Projects() {
               </div>
             </div>
           ))}
-        </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

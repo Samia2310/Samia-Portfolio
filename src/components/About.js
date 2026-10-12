@@ -10,52 +10,22 @@ export default function About() {
           <div className="about-left">
             <span className="section-tag">About Me</span>
             <h2>
-              Web Developer &
+              Artificial Intelligence and
               <span style={{
                 background: "linear-gradient(135deg, #3B82F6, #8B5CF6)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
-              }}> Data Analytics Enthusiast</span>
+              }}> Machine Learning Enthusiast</span>
             </h2>
             <p>
-              Hi! I'm Samia, a Computer Science & Engineering graduate with a passion for Data Analytics, Artificial Intelligence, Machine Learning, and Web Development. I love building projects that combine data-driven insights, intelligent systems, and clean user experiences.
+              Hi! I'm Samia, a Computer Science & Engineering graduate with a strong interest in Artificial Intelligence, Machine Learning, and Data Analytics. I enjoy building projects that combine data-driven insights, intelligent systems, and thoughtful user experiences.
             </p>
             <p>
-              From academic research to personal builds, I enjoy solving real-world
-              problems through code and I'm always learning something new along the way.
+              I plan to pursue higher studies in AI and ML and deepen my understanding of these fields. Alongside my full-stack web development experience, I enjoy solving real-world problems through code and continuously learning.
             </p>
           </div>
 
-          <div className="about-right">
-            <div className="about-info">
-              <div className="info-item">
-                <span className="info-label">Degree</span>
-                <span className="info-value">B.Sc. in CSE</span>
-              </div>
-              <div className="info-item">
-                <span className="info-label">Year</span>
-                <span className="info-value">Graduated in June, 2026</span>
-              </div>
-              <div className="info-item">
-                <span className="info-label">Focus</span>
-                <span className="info-value">Data Analytics + Web Dev</span>
-              </div>
-              <div className="info-item">
-                <span className="info-label">Location</span>
-                <span className="info-value">Bangladesh 🇧🇩</span>
-              </div>
-            </div>
-
-            <div className="about-buttons">
-              <a href="/Samia tabassum Chowdhury's Resume.pdf" className="about-btn primary" target="_blank" rel="noreferrer">
-                Resume
-              </a>
-              <a href="https://samia-portfolio-gold.vercel.app" className="about-btn secondary" target="_blank" rel="noreferrer">
-                Portfolio
-              </a>
-            </div>
-          </div>
         </div>
 
         {/* Mobile Layout */}
@@ -64,52 +34,20 @@ export default function About() {
           <div className="mobile-header">
             <span className="section-tag">About Me</span>
             <h2>
-              CSE Graduate &
+              Artificial Intelligence and
               <span style={{
                 background: "linear-gradient(135deg, #3B82F6, #8B5CF6)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
-              }}> AI/ML Enthusiast</span>
+              }}> Machine Learning Enthusiast</span>
             </h2>
             <p>
-              Hi! I'm Samia, a Computer Science & Engineering graduate with a passion for Data Analytics, Artificial Intelligence, Machine Learning, and Web Development. I love building projects that combine data-driven insights, intelligent systems, and clean user experiences.
+              Hi! I'm Samia, a Computer Science & Engineering graduate with a strong interest in Artificial Intelligence, Machine Learning, and Data Analytics. I enjoy building projects that combine data-driven insights, intelligent systems, and thoughtful user experiences.
             </p>
             <p>
-              From academic research to personal projects, I enjoy solving real-world problems through code, analyzing data, and continuously learning new technologies along the way.
+              I plan to pursue higher studies in AI and ML and deepen my understanding of these fields. Alongside my full-stack web development experience, I enjoy solving real-world problems through code and continuously learning.
             </p>
-          </div>
-
-          <div className="mobile-divider">
-            <span></span>
-          </div>
-
-          <div className="about-info">
-            <div className="info-item">
-              <span className="info-label">Degree</span>
-              <span className="info-value">B.Sc. in CSE</span>
-            </div>
-            <div className="info-item">
-              <span className="info-label">Year</span>
-              <span className="info-value">Graduated in June, 2026</span>
-            </div>
-            <div className="info-item">
-              <span className="info-label">Focus</span>
-              <span className="info-value">Data Analytics + Web Dev</span>
-            </div>
-            <div className="info-item">
-              <span className="info-label">Location</span>
-              <span className="info-value">Bangladesh 🇧🇩</span>
-            </div>
-          </div>
-
-          <div className="about-buttons">
-            <a href="/Samia tabassum Chowdhury's Resume.pdf" className="about-btn primary" target="_blank" rel="noreferrer">
-              Resume
-            </a>
-            <a href="https://samia-portfolio-gold.vercel.app" className="about-btn secondary" target="_blank" rel="noreferrer">
-              Portfolio
-            </a>
           </div>
 
         </div>

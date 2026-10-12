@@ -31,27 +31,12 @@ export default function Hero({ dark, toggleTheme }) {
 
         <div className="hero-container">
 
-          {/* Mobile-only tag — above photo */}
-          <div className="hero-tag hero-tag-mobile">
-            <span className="tag-dot" />
-            Available for opportunities
-          </div>
-
-          {/* Photo */}
-          <div className="hero-photo-wrap">
-            <div className="hero-photo-glow" />
-            <div className="hero-photo-border">
-              <img src="/photo.jpg" alt="Samia" className="hero-photo" />
-            </div>
-          </div>
-
           {/* Text content */}
           <div className="hero-content">
 
-            {/* Desktop-only tag */}
             <div className="hero-tag hero-tag-desktop">
               <span className="tag-dot" />
-              Available for opportunities
+              Available for opportunities in AI &amp; ML
             </div>
 
             <h1 className="hero-title">
@@ -66,18 +51,15 @@ export default function Hero({ dark, toggleTheme }) {
             </div>
 
             <p className="hero-description">
-              Computer Science and Engineering graduate with a strong foundation in software development and a growing interest in Data Analytics, Artificial Intelligence, and Machine Learning. Experienced in developing full-stack web applications, with a passion for delivering impactful, data-driven, and user-focused solutions that solve real-world problems and create meaningful value.
+              Computer Science and Engineering graduate with a strong foundation in software development and a growing focus on Data Analytics, Artificial Intelligence, and Machine Learning. Experienced in developing full-stack web applications, and preparing to pursue higher studies in AI and ML. Passionate about building data-driven, user-focused solutions to real-world problems.
             </p>
 
             <div className="hero-stack">
-              <span>Python</span>
-              <span>React</span>
-              <span>Next.js</span>
-              <span>SQL</span>
-              <span>Data Analysis</span>
+              <span>Artificial Intelligence</span>
               <span>Machine Learning</span>
-              <span>Deep Learning</span>
-              
+              <span>Python</span>
+              <span>Data Analysis</span>
+              <span>Web Development</span>
             </div>
 
             <div className="hero-social">
@@ -88,6 +70,13 @@ export default function Hero({ dark, toggleTheme }) {
               <a href="mailto:samiatchowdhury2310@gmail.com" className="social-link">Email</a>
             </div>
 
+          </div>
+
+          <div className="hero-photo-wrap">
+            <div className="hero-photo-glow" />
+            <div className="hero-photo-border">
+              <img src="/photo.jpg" alt="Samia Tabassum Chowdhury" className="hero-photo" />
+            </div>
           </div>
 
         </div>

@@ -683,16 +683,6 @@
     gap: 1.4rem;
   }
 
-  .hero-tag-mobile {
-    display: inline-flex;
-    align-self: center;
-    order: 1;
-  }
-
-  .hero-tag-desktop {
-    display: none;
-  }
-
   .hero-photo-wrap {
     order: 2;
     width: 175px;
