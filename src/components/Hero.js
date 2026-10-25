@@ -51,7 +51,7 @@ export default function Hero({ dark, toggleTheme }) {
             </div>
 
             <p className="hero-description">
-              Computer Science and Engineering graduate with a strong foundation in software development and a growing focus on Data Analytics, Artificial Intelligence, and Machine Learning. Experienced in developing full-stack web applications, and preparing to pursue higher studies in AI and ML. Passionate about building data-driven, user-focused solutions to real-world problems.
+              Computer Science and Engineering graduate with a strong foundation in software development and a growing focus on Data Analytics, Artificial Intelligence, and Machine Learning. Experienced in developing full-stack web applications. Passionate about building data-driven, user-focused solutions to real-world problems.
             </p>
 
             <div className="hero-stack">

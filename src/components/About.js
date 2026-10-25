@@ -22,7 +22,7 @@ export default function About() {
               Hi! I'm Samia, a Computer Science & Engineering graduate with a strong interest in Artificial Intelligence, Machine Learning, and Data Analytics. I enjoy building projects that combine data-driven insights, intelligent systems, and thoughtful user experiences.
             </p>
             <p>
-              I plan to pursue higher studies in AI and ML and deepen my understanding of these fields. Alongside my full-stack web development experience, I enjoy solving real-world problems through code and continuously learning.
+              Alongside my full-stack web development experience, I enjoy solving real-world problems through code and continuously learning.
             </p>
           </div>
 
